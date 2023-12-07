@@ -4,14 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sandLogo"
     tools:context=".view.homeActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView_vagas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_list_vagas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HOME"
-        android:textSize="50sp"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="314dp" />
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:rippleColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_action_add"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <color name="blueLogo">#000127</color>
     <color name="redLogo">#FD3212</color>
     <color name="sandLogo">#FEF2E4</color>
-    <color name="blue">#005DF1</color>
+    <color name="blue">#689DF3</color>
     <color name="grey">#807D7D</color>
+    <color name="greyDark">#3E3E3E</color>
 </resources>
