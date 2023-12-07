@@ -5,12 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sandLogo"
-    tools:context=".view.homeActivity">
+    tools:context=".view.homeActivity"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recView_vagas"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/vaga_item_recicler_view"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton_list_vagas"

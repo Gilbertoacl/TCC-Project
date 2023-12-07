@@ -1,37 +1,43 @@
 package devandroid.lima.joblyst.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import devandroid.lima.joblyst.R
 import devandroid.lima.joblyst.databinding.VagaItemReciclerViewBinding
 import devandroid.lima.joblyst.model.Vaga
 import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.Locale
 
-class AdapterVaga(
+class ListaVagasAdapter(
     private val context: Context,
     vagas: List<Vaga>
-):RecyclerView.Adapter<AdapterVaga.VagaViewHolder>() {
+):RecyclerView.Adapter<ListaVagasAdapter.ViewHolder>() {
 
     private val vagas = vagas.toMutableList()
-    class VagaViewHolder(private val binding: VagaItemReciclerViewBinding) :
+    class ViewHolder(private val binding: VagaItemReciclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun vincula(vaga: Vaga) {
-            val foto = binding.imageViewVagaItem.load(vaga.foto)
-            val nome = binding.nomeVagaItem
+            val cargo = binding.nomeVagaItem
+            cargo.text = vaga.cargo
+
             val descicao = binding.descricaoVagaItem
+            descicao.text = vaga.descricao
+
             val localizacao = binding.localizacaoVagaItem
+            localizacao.text = vaga.localizacao
+
             val data = binding.dataVagaItem
-            val salario= binding.valorVagaItem
+            data.text = vaga.data.toString()
+
+            val valor= binding.valorVagaItem
             val valorEmMoeda: String = formataSalario(vaga.salario)
-            salario.text = valorEmMoeda
+            valor.text = valorEmMoeda
+
+            binding.imageViewVagaItem.load(vaga.foto)
         }
         fun formataSalario(salario: BigDecimal): String {
             val formatador: NumberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
@@ -40,30 +46,21 @@ class AdapterVaga(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
-            VagaViewHolder {
-//        val itemLista = LayoutInflater.from(context).inflate(R.layout.vaga_item_recicler_view, parent, false)
-//        val holder = VagaViewHolder(itemLista)
-//        return holder
+            ViewHolder {
         val inflater = LayoutInflater.from(context)
         val binding = VagaItemReciclerViewBinding.inflate(inflater, parent, false)
-        return  VagaViewHolder(binding)
+        return  ViewHolder(binding)
     }
     override fun getItemCount(): Int = vagas.size
 
-    override fun onBindViewHolder(holder: VagaViewHolder, position: Int) {
-//        holder.foto.setImageResource(vagas[position].foto)
-//        holder.nome.text = vagas[position].cargo
-//        holder.descicao.text = vagas[position].descricao
-//        holder.localizacao.text = vagas[position].localizacao
-//        holder.data.text = vagas[position].dataDePostagem
-//        holder.salario.text = vagas[position].salario.toString()
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val vaga = vagas[position]
         holder.vincula(vaga)
     }
 
-    fun atualiza(produtos: List<Vaga>) {
+    fun atualiza(vagas: List<Vaga>) {
         this.vagas.clear()
-        this.vagas.addAll(produtos)
+        this.vagas.addAll(vagas)
         notifyDataSetChanged()
     }
 

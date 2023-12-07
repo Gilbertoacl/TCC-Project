@@ -3,18 +3,14 @@ package devandroid.lima.joblyst.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import devandroid.lima.joblyst.R
-import devandroid.lima.joblyst.adapter.AdapterVaga
+import android.util.Log
+import devandroid.lima.joblyst.adapter.ListaVagasAdapter
 import devandroid.lima.joblyst.dao.VagasDao
 import devandroid.lima.joblyst.databinding.ActivityHomeBinding
-import devandroid.lima.joblyst.model.Vaga
 
 class homeActivity : AppCompatActivity() {
     private val dao = VagasDao()
-    private val adapter = AdapterVaga(this, dao.buscaVagas())
+    private val adapter = ListaVagasAdapter(context = this, vagas = dao.buscaVagas())
     private val binding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
@@ -24,16 +20,9 @@ class homeActivity : AppCompatActivity() {
         configuraRecyclerView()
         configuraFab()
     }
-
     override fun onResume() {
         super.onResume()
         adapter.atualiza(dao.buscaVagas())
-    }
-
-    private fun configuraRecyclerView(): RecyclerView {
-        val reciclerViewVagas = binding.recViewVagas
-        reciclerViewVagas.adapter = adapter
-        return reciclerViewVagas
     }
 
     private fun configuraFab() {
@@ -42,9 +31,14 @@ class homeActivity : AppCompatActivity() {
             chamaFormulario()
         }
     }
-
     private fun chamaFormulario() {
         val activity = Intent(this, fomularioVagasActivity::class.java)
         startActivity(activity)
     }
+    private fun configuraRecyclerView() {
+        val reciclerViewVagas = binding.recViewVagas
+        reciclerViewVagas.adapter = adapter
+    }
+
+
 }
