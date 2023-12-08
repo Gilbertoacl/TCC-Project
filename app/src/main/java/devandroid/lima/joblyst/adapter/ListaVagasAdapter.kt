@@ -1,19 +1,18 @@
 package devandroid.lima.joblyst.adapter
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import devandroid.lima.joblyst.databinding.VagaItemReciclerViewBinding
 import devandroid.lima.joblyst.model.Vaga
+import devandroid.lima.joblyst.ui.home.HomeFragment
 import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.Locale
 
 class ListaVagasAdapter(
-    private val context: Context,
+    private val context: HomeFragment,
     vagas: List<Vaga>
 ):RecyclerView.Adapter<ListaVagasAdapter.ViewHolder>() {
 
@@ -21,6 +20,8 @@ class ListaVagasAdapter(
     class ViewHolder(private val binding: VagaItemReciclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun vincula(vaga: Vaga) {
+
+            binding.imageViewVagaItem.load(vaga.foto)
             val cargo = binding.nomeVagaItem
             cargo.text = vaga.cargo
 
@@ -37,7 +38,6 @@ class ListaVagasAdapter(
             val valorEmMoeda: String = formataSalario(vaga.salario)
             valor.text = valorEmMoeda
 
-            binding.imageViewVagaItem.load(vaga.foto)
         }
         fun formataSalario(salario: BigDecimal): String {
             val formatador: NumberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
@@ -47,7 +47,7 @@ class ListaVagasAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             ViewHolder {
-        val inflater = LayoutInflater.from(context)
+        val inflater = LayoutInflater.from(parent.context)
         val binding = VagaItemReciclerViewBinding.inflate(inflater, parent, false)
         return  ViewHolder(binding)
     }

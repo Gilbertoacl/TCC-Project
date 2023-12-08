@@ -1,28 +1,33 @@
 package devandroid.lima.joblyst.view
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.annotation.RequiresApi
 import devandroid.lima.joblyst.adapter.ListaVagasAdapter
 import devandroid.lima.joblyst.dao.VagasDao
 import devandroid.lima.joblyst.databinding.ActivityHomeBinding
 
 class homeActivity : AppCompatActivity() {
     private val dao = VagasDao()
-    private val adapter = ListaVagasAdapter(context = this, vagas = dao.buscaVagas())
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    private val adapter = ListaVagasAdapter(context = this, vagas = dao.buscaVagas())
     private val binding by lazy {
         ActivityHomeBinding.inflate(layoutInflater)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(binding.root)
-        configuraRecyclerView()
+//        configuraRecyclerView()
         configuraFab()
+
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
-        adapter.atualiza(dao.buscaVagas())
+//        adapter.atualiza(dao.buscaVagas())
     }
 
     private fun configuraFab() {
@@ -36,8 +41,8 @@ class homeActivity : AppCompatActivity() {
         startActivity(activity)
     }
     private fun configuraRecyclerView() {
-        val reciclerViewVagas = binding.recViewVagas
-        reciclerViewVagas.adapter = adapter
+//        val reciclerViewVagas = binding.recViewVagas
+//        reciclerViewVagas.adapter = adapter
     }
 
 

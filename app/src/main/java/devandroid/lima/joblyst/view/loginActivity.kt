@@ -30,7 +30,7 @@ class loginActivity : AppCompatActivity() {
 
     fun checkCredentials(user: EditText, password: EditText) {
         if (user.text.toString() == "admin" && password.text.toString() == "123456") {
-            val intent = Intent(this, homeActivity::class.java)
+            val intent = Intent(this, NavigationDrawerMain::class.java)
             startActivity(intent)
             finish()
         }

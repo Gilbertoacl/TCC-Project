@@ -49,7 +49,6 @@ class fomularioVagasActivity :
             val bindingFormImagem = FormularioImagemBinding.inflate(layoutInflater)
             bindingFormImagem.formularioImagemButton.setOnClickListener {
                 val url = bindingFormImagem.formularioImagemEdittextUrl.text.toString()
-                //bindingFormImagem.formularioImagemImageview.load(url)
                 bindingFormImagem.formularioImagemImageview.load(
                     url,
                     imageLoader = imageLoader
@@ -59,7 +58,6 @@ class fomularioVagasActivity :
                 .setView(bindingFormImagem.root)
                 .setPositiveButton("Confirmar"){_, _ ->
                     url = bindingFormImagem.formularioImagemEdittextUrl.text.toString()
-                    //binding.imageViewFormularioProduto.load(url)
                     binding.imageViewFormularioProduto.load(
                         url,
                         imageLoader

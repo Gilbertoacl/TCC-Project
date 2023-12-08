@@ -126,11 +126,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Salvar"
-            app:layout_constraintVertical_bias="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descricao_vaga_formulario_textinputlayout" />
+            app:layout_constraintTop_toBottomOf="@+id/salario_vaga_formulario_textinputlayout"
+            app:layout_constraintVertical_bias="1" />
 
 
 

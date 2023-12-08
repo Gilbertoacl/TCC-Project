@@ -2,6 +2,8 @@ package devandroid.lima.joblyst.dao
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import coil.ImageLoader
+import devandroid.lima.joblyst.R
 import devandroid.lima.joblyst.model.Vaga
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -20,7 +22,6 @@ class VagasDao {
     }
 
     companion object {
-
         @RequiresApi(Build.VERSION_CODES.O)
         private val vagas = mutableListOf<Vaga>(
             Vaga(
