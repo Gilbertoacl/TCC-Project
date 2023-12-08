@@ -15,21 +15,21 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".view.fomularioVagasActivity"
+            android:name=".ui.view.FomularioVagasActivity"
             android:exported="false" />
         <activity
-            android:name=".view.splashActivity"
+            android:name=".ui.view.splashActivity"
             android:exported="false" />
         <activity
-            android:name=".view.homeActivity"
+            android:name=".ui.view.homeActivity"
             android:exported="false" />
         <activity
-            android:name=".view.NavigationDrawerMain"
+            android:name=".ui.view.NavigationDrawerMain"
             android:exported="true"
             android:label="@string/title_activity_nav_drawer_main"
             android:theme="@style/Base.Theme.JobLyst.NoActionBar"/>
         <activity
-            android:name=".view.loginActivity"
+            android:name=".ui.view.loginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

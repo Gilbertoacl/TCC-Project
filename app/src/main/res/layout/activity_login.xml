@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blueLogo"
-    tools:context=".view.loginActivity">
+    tools:context=".ui.view.loginActivity">
 
     <View
         android:id="@+id/container"

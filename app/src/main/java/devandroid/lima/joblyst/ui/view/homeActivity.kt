@@ -1,11 +1,10 @@
-package devandroid.lima.joblyst.view
+package devandroid.lima.joblyst.ui.view
 
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
-import devandroid.lima.joblyst.adapter.ListaVagasAdapter
 import devandroid.lima.joblyst.dao.VagasDao
 import devandroid.lima.joblyst.databinding.ActivityHomeBinding
 
@@ -37,7 +36,7 @@ class homeActivity : AppCompatActivity() {
         }
     }
     private fun chamaFormulario() {
-        val activity = Intent(this, fomularioVagasActivity::class.java)
+        val activity = Intent(this, FomularioVagasActivity::class.java)
         startActivity(activity)
     }
     private fun configuraRecyclerView() {

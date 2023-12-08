@@ -1,10 +1,11 @@
 package devandroid.lima.joblyst.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import devandroid.lima.joblyst.databinding.VagaItemReciclerViewBinding
+import devandroid.lima.joblyst.extensions.loadImage
 import devandroid.lima.joblyst.model.Vaga
 import devandroid.lima.joblyst.ui.home.HomeFragment
 import java.math.BigDecimal
@@ -21,7 +22,7 @@ class ListaVagasAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun vincula(vaga: Vaga) {
 
-            binding.imageViewVagaItem.load(vaga.foto)
+
             val cargo = binding.nomeVagaItem
             cargo.text = vaga.cargo
 
@@ -37,6 +38,15 @@ class ListaVagasAdapter(
             val valor= binding.valorVagaItem
             val valorEmMoeda: String = formataSalario(vaga.salario)
             valor.text = valorEmMoeda
+
+            val visibilidade = if (vaga.foto != null) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+            binding.imageViewVagaItem.visibility = visibilidade
+
+            binding.imageViewVagaItem.loadImage(vaga.foto)
 
         }
         fun formataSalario(salario: BigDecimal): String {

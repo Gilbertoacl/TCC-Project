@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/sandLogo"
-    tools:context=".view.homeActivity">
+    tools:context=".ui.view.homeActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

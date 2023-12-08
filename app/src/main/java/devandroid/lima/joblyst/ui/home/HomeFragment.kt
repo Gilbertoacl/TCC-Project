@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import devandroid.lima.joblyst.adapter.ListaVagasAdapter
 import devandroid.lima.joblyst.dao.VagasDao
 import devandroid.lima.joblyst.databinding.FragmentHomeBinding
-import devandroid.lima.joblyst.view.fomularioVagasActivity
+import devandroid.lima.joblyst.ui.view.FomularioVagasActivity
 
 class HomeFragment : Fragment() {
 
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
         }
     }
     private fun chamaFormulario() {
-        val activity = Intent(context, fomularioVagasActivity::class.java)
+        val activity = Intent(context, FomularioVagasActivity::class.java)
         startActivity(activity)
     }
     private fun configuraRecyclerView() {

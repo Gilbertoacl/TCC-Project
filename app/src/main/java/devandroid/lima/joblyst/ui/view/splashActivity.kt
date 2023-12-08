@@ -1,4 +1,4 @@
-package devandroid.lima.joblyst.view
+package devandroid.lima.joblyst.ui.view
 
 import android.content.Intent
 import android.graphics.Color

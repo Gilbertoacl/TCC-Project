@@ -14,13 +14,13 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="devandroid.lima.joblyst.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_perfil"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="devandroid.lima.joblyst.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_sobre"
         tools:layout="@layout/fragment_slideshow" />
 
 </navigation>
