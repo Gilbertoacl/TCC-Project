@@ -1,4 +1,4 @@
-package devandroid.lima.joblyst.ui.view
+package devandroid.lima.joblyst.ui.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -18,7 +18,6 @@ class FomularioVagasActivity :
     private val binding by lazy {
         ActivityFomularioVagasBinding.inflate(layoutInflater)
     }
-
     private var url: String?= null
 
 
@@ -34,9 +33,6 @@ class FomularioVagasActivity :
                 }
         }
     }
-
-
-    @SuppressLint("NewApi")
     private fun btnSave(){
         val btnSalvar = binding.botaoGravarFormularioProduto
         btnSalvar.setOnClickListener {

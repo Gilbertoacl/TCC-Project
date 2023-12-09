@@ -3,6 +3,7 @@ package devandroid.lima.joblyst.ui.home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import devandroid.lima.joblyst.adapter.ListaVagasAdapter
 import devandroid.lima.joblyst.dao.VagasDao
 import devandroid.lima.joblyst.databinding.FragmentHomeBinding
-import devandroid.lima.joblyst.ui.view.FomularioVagasActivity
+import devandroid.lima.joblyst.ui.activity.CHAVE_PRODUTO
+import devandroid.lima.joblyst.ui.activity.DetalhesVagasActivity
+import devandroid.lima.joblyst.ui.activity.FomularioVagasActivity
 
 class HomeFragment : Fragment() {
 
@@ -19,7 +22,6 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val dao = VagasDao()
-    @SuppressLint("NewApi")
     private val adapter = ListaVagasAdapter(context = this, vagas = dao.buscaVagas())
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,13 +35,13 @@ class HomeFragment : Fragment() {
 
         configuraRecyclerView()
         configuraFab()
+
         return root
     }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-    @SuppressLint("NewApi")
     override fun onResume() {
         super.onResume()
        adapter.atualiza(dao.buscaVagas())
@@ -52,11 +54,24 @@ class HomeFragment : Fragment() {
         }
     }
     private fun chamaFormulario() {
-        val activity = Intent(context, FomularioVagasActivity::class.java)
+        val activity = Intent(
+            context,
+            FomularioVagasActivity::class.java)
         startActivity(activity)
     }
     private fun configuraRecyclerView() {
         val reciclerViewVagas = binding.recViewVagas
         reciclerViewVagas.adapter = adapter
+
+        adapter.quandoClicaNoItem = {
+            val intent = Intent(
+                context,
+                DetalhesVagasActivity::class.java
+            ).apply {
+                Log.i("QuandoClica", "ta passando a intent $it")
+                putExtra(CHAVE_PRODUTO, it)
+            }
+            startActivity(intent)
+        }
     }
 }

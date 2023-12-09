@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,23 +14,22 @@
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.JobLyst"
         tools:targetApi="31">
-
         <activity
-            android:name=".ui.view.FomularioVagasActivity"
+            android:name=".ui.activity.DetalhesVagasActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.splashActivity"
+            android:name=".ui.activity.FomularioVagasActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.view.homeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.view.NavigationDrawerMain"
+            android:name=".ui.activity.NavigationDrawerMain"
             android:exported="true"
             android:label="@string/title_activity_nav_drawer_main"
-            android:theme="@style/Base.Theme.JobLyst.NoActionBar"/>
+            android:theme="@style/Base.Theme.JobLyst.NoActionBar" />
         <activity
-            android:name=".ui.view.loginActivity"
+            android:name=".ui.activity.loginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.splashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package devandroid.lima.joblyst.ui.view
+package devandroid.lima.joblyst.ui.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,7 +11,7 @@ import devandroid.lima.joblyst.R
 class splashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_splash)
 
         supportActionBar?.hide()
         window.statusBarColor = Color.parseColor("#000127")

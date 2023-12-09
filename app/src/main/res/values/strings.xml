@@ -13,4 +13,7 @@
     <string name="menu_home">Feed de Vagas</string>
     <string name="menu_perfil">Perfil</string>
     <string name="menu_sobre">Sobre</string>
+
+    <string name="sobre">JobLyst é um app desenvolvido com Android Studio, para auxiliar as pessoas na busca de vagas de emprego</string>
+    <string name="sobre2">É desenvolvido por um aluno de Eng. de Software como TCC de final de curso.</string>
 </resources>

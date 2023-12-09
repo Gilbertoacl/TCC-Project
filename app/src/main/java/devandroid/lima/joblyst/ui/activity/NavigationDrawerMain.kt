@@ -1,4 +1,4 @@
-package devandroid.lima.joblyst.ui.view
+package devandroid.lima.joblyst.ui.activity
 
 import android.os.Bundle
 import android.view.Menu
@@ -32,11 +32,13 @@ class NavigationDrawerMain : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.activity_home
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

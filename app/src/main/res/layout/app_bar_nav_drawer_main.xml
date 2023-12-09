@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.NavigationDrawerMain">
+    tools:context=".ui.activity.NavigationDrawerMain">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_nav_drawer_main"
@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/blueLogo"
             app:popupTheme="@style/Base.Theme.JobLyst.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>

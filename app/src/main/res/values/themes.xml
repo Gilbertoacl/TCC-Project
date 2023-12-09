@@ -22,4 +22,8 @@
     </style>
     <style name="Base.Theme.JobLyst.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Base.Theme.JobLyst.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+<!--    <style name="Theme.Orgs.NoActionBar" parent="Theme.Orgs">-->
+<!--    &lt;!&ndash; Remoção da App bar para o estilo &ndash;&gt;-->
+<!--    <item name="windowActionBar">false</item>-->
+<!--    <item name="windowNoTitle">true</item>-->
 </resources>
